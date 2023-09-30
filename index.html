@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Fuggles&family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-form">
+        <form action="" class="form" onsubmit="handle_submit(event)">
+            <p class="title">TechnoHacks</p>
+            <div class="info">
+                <p>Username</p>
+                <input type="text" id="Uname" class="name-in" placeholder="User Name">
+                <p>Password</p>
+                <input type="password" id="pass" class="name-in" placeholder="Password">
+                <div class="buttons">
+                    <div id="error-message" class="error-message"></div>
+                    <button type="submit" id="sub" class="submit">Submit</button>
+                    <button type="reset" class="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const handle_submit = (event) => {
+            event.preventDefault();
+            const uname = document.getElementById('Uname').value;
+            const pass = document.getElementById('pass').value;
+            const true_unamme = "Shubhamg200204";
+            const true_pass = "Pass200204";
+            const error_message = document.getElementById('error-message');
+
+            if (uname === true_unamme && pass === true_pass) {
+                error_message.textContent = '';
+                // Login successful, you can redirect or perform other actions here
+                alert('Login Successful');
+                document.getElementById('Uname').value = "";
+                document.getElementById('pass').value = "";
+            } else {
+                // Display an error message
+                error_message.textContent = 'Incorrect username or password';
+                document.getElementById('Uname').value = "";
+                document.getElementById('pass').value = "";
+            }
+        }
+    </script>
+</body>
+</html>
